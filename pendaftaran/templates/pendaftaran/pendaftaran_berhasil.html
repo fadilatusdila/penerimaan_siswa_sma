@@ -1,25 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Siswa Baru SMA</title>
+    <title>Pendaftaran Siswa Berhasil</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div class="container">
-        <h1>Form Pendaftaran Siswa Baru SMA</h1>
+        <h1 class="title">Pendaftaran Siswa Berhasil!</h1>
         <div class="form-container">
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Daftar</button>
-            </form>
-            {% if form.errors %}
-            <p class="error-message">Ada kesalahan dalam pengisian formulir. Silakan perbaiki dan kirim kembali.</p>
-            {% endif %}
+            <p>Selamat, pendaftaran siswa baru Anda untuk MA Al Huda telah berhasil!</p>
+            <p>Terima kasih telah mendaftar.</p>
         </div>
     </div>
 </body>
 </html>
-

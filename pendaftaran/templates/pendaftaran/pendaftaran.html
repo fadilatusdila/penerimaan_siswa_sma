@@ -1,16 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Siswa Baru SMA</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Formulir Pendaftaran Siswa Baru MA. AL- HUDA</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Daftar</button>
-    </form>
+    <div class="container">
+        <h1 class="title">Formulir Pendaftaran Siswa Baru MA Al Huda</h1>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Daftar</button>
+            </form>
+            {% if form.errors %}
+            <p class="error-message">Ada kesalahan dalam pengisian formulir. Silakan perbaiki dan kirim kembali.</p>
+            {% endif %}
+            <img src="https://www.gambaranimasi.org/data/media/276/animasi-bergerak-sekolah-0056.gif" alt="Hiasan Bergerak" class="hiasan">
+        </div>
+    </div>
 </body>
 </html>

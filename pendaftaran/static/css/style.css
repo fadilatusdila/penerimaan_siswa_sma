@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive; /* Menggunakan font lucu */
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -11,48 +11,59 @@ body {
     overflow: hidden;
 }
 
-h1 {
+.title {
     text-align: center;
     margin-top: 50px;
+    color: #007bff; /* Warna biru */
 }
 
 .form-container {
-    background-color: #fff;
+    background: linear-gradient(to bottom right, #007bff, #ffc107); /* Gradasi dari biru ke kuning */
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Border radius lebih besar untuk tampilan yang lebih halus */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Bayangan halus */
+    position: relative; /* Diperlukan untuk animasi */
 }
 
 .form-container input[type="text"],
-.form-container input[type="date"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
+.form-container input[type="date"],
 .form-container textarea {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 3px;
+    font-size: 16px; /* Mengatur ukuran font */
 }
 
 .form-container button {
-    background-color: #4caf50;
+    background-color: #f0ad4e; /* Warna kuning */
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    font-size: 16px; /* Mengatur ukuran font */
 }
 
 .form-container button:hover {
-    background-color: #45a049;
+    background-color: #ec971f; /* Warna kuning yang sedikit lebih gelap */
 }
 
 .error-message {
     color: red;
+}
+
+/* Animasi hiasan */
+@keyframes hiasan-bergerak {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+}
+
+.hiasan {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    animation: hiasan-bergerak 3s infinite; /* Animasi bergerak */
 }
