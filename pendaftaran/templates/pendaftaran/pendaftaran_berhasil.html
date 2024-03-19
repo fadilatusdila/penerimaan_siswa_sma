@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Berhasil</title>
+    <title>Pendaftaran Siswa Baru SMA</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Pendaftaran Berhasil!</h1>
-    <p>Terima kasih atas pendaftarannya. Kami akan segera menghubungi Anda.</p>
+    <div class="container">
+        <h1>Form Pendaftaran Siswa Baru SMA</h1>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Daftar</button>
+            </form>
+            {% if form.errors %}
+            <p class="error-message">Ada kesalahan dalam pengisian formulir. Silakan perbaiki dan kirim kembali.</p>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
+
